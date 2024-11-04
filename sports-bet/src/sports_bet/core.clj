@@ -1,4 +1,4 @@
-(ns esports-bet.core
+(ns sports-bet.core
   (:gen-class))
 
 (defn -main
