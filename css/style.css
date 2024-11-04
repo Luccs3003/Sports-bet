@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins');
+
+:root {
+    --gray: #4b4b55;
+    --red: #f4324a;
+    --green: #1cb048;
+    --white: #ffffff;
+    --black: #161618;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+
+body {
+    background-color: var(--gray);
+}
+
+header {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 86%; 
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.navigator {
+    display: block;
+}
+
+.navigator ul {
+    list-style: none;
+    text-transform: uppercase;
+    display: flex;
+    top: -20px;
+    margin-left: 70px;
+    gap: 10px;
+}
+
+.navigator li {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.navigator li a {
+    text-decoration: none;
+    padding: 5px 10px; 
+    display: block;
+    color: var(--white);
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 25px;
+    border-radius: 10px;
+    transition: .5s;
+}
+
+.navigator li a:hover {
+    color: white;
+    background: var(--green);
+    text-shadow: 0px 0px 5px #fff;
+}
+
+.navigator li ul {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    background-color: #fff;
+    display: none;
+}
+
+.navigator li:hover, 
+.navigator li:hover ul {
+    display: block;
+}
+
+.navigator li ul li {
+    border: 1px solid #c0c0c0;
+    display: block;
+    width: 150px;
+}
+
+.logo a {
+    font-size: 35px;
+    font-weight: 600;
+    color: var(--white);
+}
+
+button {
+    background-color: var(--green);
+    margin-left: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    width: 90px;
+}
+
+button a {
+    color: var(--white);
+    font-weight: bold;
+    font-size: 15px
+}
