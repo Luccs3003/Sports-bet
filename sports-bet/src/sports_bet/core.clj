@@ -1,5 +1,6 @@
 (ns sports-bet.core
-  (:require [sports-bet.api :as api])
+  (:require [sports-bet.api :as api]
+            [sports-bet.conta :as conta])
   (:gen-class))
 
 (defn listar-esportes []
@@ -10,12 +11,14 @@
 (defn menu []
   (println "\n=== MENU DE APOSTAS ESPORTIVAS ===")
   (println "1. Listar Esportes")
-  (println "2. Sair")
+  (println "2. Gerenciar Conta")
+  (println "3. Sair")
   (print "Escolha uma opção:\n ")
   (def opcao (read-line))
     (case opcao
       "1" (do (listar-esportes) (menu))
-      "2" (println "Saindo...")
+      "2" (do (conta/menu-conta) (menu))
+      "3" (println "Saindo...")
       (do (println "Opção inválida!") (menu))))
 
 (defn -main [& args]
