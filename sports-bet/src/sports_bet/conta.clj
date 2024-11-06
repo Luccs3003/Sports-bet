@@ -1,13 +1,18 @@
 (ns sports-bet.conta)
 
-(def saldo (atom []))
+(def saldo (atom 0))
 (def registro-transacoes (atom []))
 
 (defn deposito [valor]
-  (swap! saldo conj valor))
+  (swap! saldo + valor)
+  (swap! registro-transacoes conj valor))
 
-(defn- consultar-saldo []
-  (doall (println saldo)))
+(defn debito [valor]
+  (swap! saldo - valor)
+  (swap! registro-transacoes conj valor))
+
+(defn consultar-saldo []
+  (println @saldo))
 
 (defn menu-conta []
   (println "Entrou na conta")
@@ -19,8 +24,9 @@
     "1" (do (println "Digite o valor a ser depositado: ")
             (def valor (Integer/parseInt (read-line)))
             (deposito valor)
+            (println "Operação Concluida!")
             (println (format "Você depositou: R$ %d,00" valor)))
     "2" (do 
-          (print "Seu saldo é: ")
+          (print "Seu saldo é: R$ ")
           (consultar-saldo))
     (do (println "Opção inválida!") (menu-conta))))
