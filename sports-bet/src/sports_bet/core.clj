@@ -1,6 +1,5 @@
 (ns sports-bet.core
-  (:require [sports-bet.api :as api]
-            [sports-bet.conta :as conta]
+  (:require [sports-bet.conta :as conta]
             [sports-bet.apostas :as apostas]
             [sports-bet.listagem :as listagem])
   (:gen-class))
