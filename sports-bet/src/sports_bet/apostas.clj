@@ -1,6 +1,5 @@
 (ns sports-bet.apostas
-  (:require [sports-bet.core :as core]
-            [sports-bet.conta :as conta]))
+  (:require [sports-bet.conta :as conta]))
 
 (def registro-apostas (atom []))
 
@@ -21,6 +20,6 @@
           (println "1. Vencedor da Partida")
           (println "2. Resultado Correto da Partida")
           (println "3. Voltar"))
-    "2" (do ())
-    "3" (core/menu)
+    "2" (do (println "Ja") (menu-apostas))
+    "3" (println "Ui")
     (do (println "Opção inválida!") (menu-apostas))))

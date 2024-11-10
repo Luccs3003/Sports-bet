@@ -4,9 +4,13 @@
             [sports-bet.apostas :as apostas])
   (:gen-class))
 
-(defn listar-esportes []
-  (def esportes (api/obter-esportes))
-    (dorun (map #(println (:name %)) (vals esportes))))
+(defn modalidades-disponiveis [modalidade]
+  (some #(= modalidade %) ["Soccer" "Counter Strike"]))
+
+(defn listar-esportes [] 
+  (let [esportes (api/obter-esportes)] 
+    (let [modalidades-filtradas (filter #(modalidades-disponiveis (:name %)) (vals esportes))] 
+      (dorun (map #(println (:name %)) modalidades-filtradas)))))
 
 (defn menu []
   (println "\n=== MENU DE APOSTAS ESPORTIVAS ===")
