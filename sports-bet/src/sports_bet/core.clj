@@ -14,12 +14,12 @@
   (println "Escolha uma opção: ")
   (def opcao (read-line))
     (case opcao
-      "1" (do (println "Esportes disponíveis:") (listagem/listar-esportes) (menu))
+      "1" (do (println "Esportes disponiveis:") (listagem/listar-esportes) (menu))
       "2" (do (conta/menu-conta) (menu))
       "3" (do (apostas/menu-apostas) (menu))
       "4" (do () (menu))
       "5" (println "Saindo...")
-      (do (println "Opção inválida!") (menu))))
+      (do (println "Opção invalida!") (menu))))
 
 (defn -main [& args]
   (menu))

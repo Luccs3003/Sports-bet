@@ -16,7 +16,7 @@
   (def opcao (read-line))
   (case opcao
     "1" (do 
-          (println "Você selecionou Futebol")
+          (println "Voce selecionou Futebol")
           (println "Selecione o mercado (Tipo): ")
           (println "1. Vencedor da Partida")
           (println "2. Resultado Correto da Partida")
@@ -30,4 +30,4 @@
           (println "3. Voltar")
           (def opcao (read-line)))
     "3" (println "Voltando..")
-    (do (println "Opção inválida!") (menu-apostas))))
+    (do (println "Opção invalida!") (menu-apostas))))

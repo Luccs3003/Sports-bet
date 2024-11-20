@@ -17,16 +17,16 @@
 (defn menu-conta []
   (println "Entrou na conta")
   (println "\n=== GERENCIAR CONTA ===")
-  (println "1. Fazer Depósito")
+  (println "1. Fazer Deposito")
   (println "2. Consultar Saldo")
   (def opcao (read-line))
   (case opcao
     "1" (do (println "Digite o valor a ser depositado: ")
             (def valor (Integer/parseInt (read-line)))
             (deposito valor)
-            (println "Operação Concluida!")
+            (println "Operacao Concluida!")
             (println (format "Você depositou: R$ %d,00" valor)))
     "2" (do 
-          (print "Seu saldo é: R$ ")
+          (print "Seu saldo: R$ ")
           (consultar-saldo))
-    (do (println "Opção inválida!") (menu-conta))))
+    (do (println "Opcao invalida!") (menu-conta))))
